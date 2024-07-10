@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:todo/controller/add_new_post.dart';
 import 'package:todo/controller/post_controller.dart';
+import 'package:todo/pages/add_new_post.dart';
 import 'package:todo/pages/home_page.dart';
 import 'controller/add_video_controller.dart';
 import 'controller/complain_controller.dart';
@@ -18,6 +20,7 @@ import 'pages/bottom_nav.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Get.testMode = true;
+  Get.put(AddNewPostController());
   Get.put(AddVideoController());
   Get.put(PostController());
   Get.put(CreatePlayeController());
@@ -44,7 +47,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.dark(),
         // useMaterial3: true,
       ),
-      home: HomePage(),
+      home: LandingPage(),
     );
   }
 }
