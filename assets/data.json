@@ -1,41 +1,42 @@
 {
-  "products"
-  :[
+  "product"
+  : [
   {
+    "comment": "like your post",
     "desc": "apple",
     "name": "Apple",
     "image": "https://th.bing.com/th/id/OIP.9WLcK0wmp2uyWDfLbK3MwAAAAA?w=437&h=436&rs=1&pid=ImgDetMain",
     "image1":"https://th.bing.com/th/id/OIP.ogAxFxskhRI3twxxiAe8IwHaLH?w=133&h=198&c=7&r=0&o=5&dpr=1.3&pid=1.7",
     "Singer": "https://i.pinimg.com/originals/ca/7c/10/ca7c10b8948dfd55e1200728a1e137df.jpg",
-  
-    "likes": 2,
+    "time":" 2:21",
     "comments": 5
   },
-  {
+  { "comment": "Commented on you post",
     "image1": "https://www.pngmart.com/files/23/Green-Circle-PNG-Image.png",
     "image": "https://th.bing.com/th/id/OIP.Z5nTwqagkwFSVO3Jh7OglQHaHa?w=198&h=198&c=7&r=0&o=5&dpr=1.3&pid=1.7",
     "Singer": "https://musicschool.in/wp-content/uploads/2020/10/Atif-Aslam-Cover-photo.jpg",
     "desc": " Hello Testers you might notice that some glitches and buttons not working fine but that,s what we are working to doing it ok",
     "name": "trinity",
-    "likes": 2,
+    "time":" 12:21",
     "comments": 5
   },
-  {
+  { "comment": "Commented on you post",
     "desc": "big AK",
     "name": "akademikis",
     "Singer": "https://th.bing.com/th/id/R.6a883b48ec894f12f0a8b4d7e622f0c9?rik=UIKNWgCM1oO%2b8w&riu=http%3a%2f%2fpakistaniat.com%2fimages%2fAttaullah-khan-niazi-2.jpg&ehk=ZXZv5amPzkVSYg6vxQp1qATtIhWUQIVim7leOp7XV8g%3d&risl=&pid=ImgRaw&r=0",
     "image": "https://th.bing.com/th/id/OIP.PX76EQZYoXJgtOj4C2B1uwHaIl?w=165&h=191&c=7&r=0&o=5&dpr=1.3&pid=1.7",
-    "likes": 2,
+    "time":" 11:21",
     "comments": 5
   },
-  {
+  {  "comment": "Commented on you post",
     "desc": "Cant wait thing to below !!",
     "name": "Xavier",
     "Singer": "https://th.bing.com/th/id/OIP.41ATLhwkn26_srtqCsCLAQHaHZ?rs=1&pid=ImgDetMain",
     "image": "https://th.bing.com/th/id/OIP.blyzIXx23djA4VcF7qGa-AHaHa?w=192&h=192&c=7&r=0&o=5&dpr=1.3&pid=1.7",
-    "likes": 2,
+    "time":" 6:21",
     "comments": 5
   }
+
 ]
 }
 

@@ -8,7 +8,7 @@ class VideoController extends GetxController {
   void getData() async {
     final data = await rootBundle.loadString("assets/data.json");
     var obj = jsonDecode(data);
-    list = obj["products"];
+    list = obj["product"];
     update();
   }
 

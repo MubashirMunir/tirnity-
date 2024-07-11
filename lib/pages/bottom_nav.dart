@@ -109,6 +109,8 @@ class LandingPage extends StatelessWidget {
               HomePage(),
               VideoPage(),
               Reels(),
+              Reels(),
+              Reels(),
             ],
           )),
     ));

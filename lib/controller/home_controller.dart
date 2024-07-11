@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+
+import '../pages/info_page.dart';
 class HomeController extends GetxController {
 
    bool isLike =true;
@@ -15,9 +17,9 @@ class HomeController extends GetxController {
    getData() async{
      final jsonfile = await rootBundle.loadString("assets/data.json");
      final data =jsonDecode(jsonfile);
-     list =data['products'];
-
-     update();
+     list =data['product'];
+     //
+     // update();
 
    }
    @override
@@ -36,4 +38,7 @@ class HomeController extends GetxController {
    // void incre() {
    //   Like ? value++ : value--;
    // }
+Future<void> navigat(name,image,comment) async{
+  await Get.to(InfoPage( name: name,image:image ,comment: comment,));
+}
   }

@@ -16,7 +16,7 @@ class _CommentPageState extends State<CommentPage> {
       'name': 'Saif Ur rehman',
       'pic':
           'https://media.licdn.com/media/AAYQAQSOAAgAAQAAAAAAAB-zrMZEDXI2T62PSuT6kpB6qg.png',
-      'message': 'yoo man',
+      'message': 'Like your post',
       'date': '2021-01-01 12:00:00'
     },
   ];

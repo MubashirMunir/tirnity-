@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:todo/pages/comment_page.dart';
 import '../controller/home_controller.dart';
 import 'add_new_post.dart';
-import 'posts_page.dart';
+import 'notificatio_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
                   },
                   icon: const Icon(Icons.add)),
               IconButton(
-                  onPressed: () {}, icon: const Icon(Icons.notifications)),
+                  onPressed: () {Get.to(const NotificationPage());}, icon: const Icon(Icons.notifications)),
               IconButton(
                   onPressed: () {},
                   icon: const Icon(Icons.messenger_outline_sharp)),
@@ -35,63 +35,65 @@ class HomePage extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return Column(
                         children: [
-                          Row(children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: CircleAvatar(
-                                radius: 20,
-                                backgroundImage: NetworkImage(
-                                    ctrl.list[index]['image'].toString()),
+                          InkWell(onTap:(){ctrl.navigat(ctrl.list[index]['name'],ctrl.list[index]['image'],ctrl.list[index]['comment']);},
+                            child: Row(children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: CircleAvatar(
+                                  radius: 20,
+                                  backgroundImage: NetworkImage(
+                                      ctrl.list[index]['image'].toString()),
+                                ),
                               ),
-                            ),
-                            Expanded(
-                              child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        const SizedBox(
-                                          width: 6,
-                                        ),
-                                        Text(ctrl.list[index]['name']),
-                                        const SizedBox(
-                                          width: 2,
-                                        ),
-                                        const Icon(
-                                          Icons.verified,
-                                          color: Colors.blue,
-                                          size: 14,
-                                        ),
-                                        const SizedBox(
-                                          width: 4,
-                                        ),
-                                        const Text(
-                                          "1 W",
-                                          style: TextStyle(
-                                              color: Colors.blueGrey,
-                                              fontSize: 11),
-                                        ),
-                                      ],
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Text(
-                                        ctrl.list[index]['desc'],
-                                        style: const TextStyle(
-                                            overflow: TextOverflow.ellipsis),
-                                        maxLines: 10,
+                              Expanded(
+                                child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          const SizedBox(
+                                            width: 6,
+                                          ),
+                                          Text(ctrl.list[index]['name']),
+                                          const SizedBox(
+                                            width: 2,
+                                          ),
+                                          const Icon(
+                                            Icons.verified,
+                                            color: Colors.blue,
+                                            size: 14,
+                                          ),
+                                          const SizedBox(
+                                            width: 4,
+                                          ),
+                                          const Text(
+                                            "1 W",
+                                            style: TextStyle(
+                                                color: Colors.blueGrey,
+                                                fontSize: 11),
+                                          ),
+                                        ],
                                       ),
-                                    ),
-                                  ]),
-                            ),
-                            const SizedBox(
-                              width: 30,
-                            ),
-                            IconButton(
-                              icon: const Icon(Icons.more_vert),
-                              onPressed: () {},
-                            ),
-                          ]),
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text(
+                                          ctrl.list[index]['desc'],
+                                          style: const TextStyle(
+                                              overflow: TextOverflow.ellipsis),
+                                          maxLines: 10,
+                                        ),
+                                      ),
+                                    ]),
+                              ),
+                              const SizedBox(
+                                width: 30,
+                              ),
+                              IconButton(
+                                icon: const Icon(Icons.more_vert),
+                                onPressed: () {},
+                              ),
+                            ]),
+                          ),
                           const SizedBox(
                             height: 10,
                           ),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import '../controller/video_controller.dart';
-import '../widgets/video_widget.dart';
 import 'playing_page.dart';
 
 class VideoPage extends StatelessWidget {
@@ -112,6 +111,9 @@ class VideoPage extends StatelessWidget {
               ]),
               Container(
                 color: Colors.yellow,
+              ),
+              Container(
+                color: Colors.blue,
               ),
               Container(
                 color: Colors.blue,
