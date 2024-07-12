@@ -23,7 +23,7 @@ class _AddNewPostState extends State<AddNewPost> {
         _image = File(image.path);
       });
     } else {
-      Text("No image");
+      const Text("No image");
     }
   }
 

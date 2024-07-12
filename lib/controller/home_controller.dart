@@ -13,24 +13,25 @@ class HomeController extends GetxController {
    }
 
     List list =[];
-
    getData() async{
      final jsonfile = await rootBundle.loadString("assets/data.json");
      final data =jsonDecode(jsonfile);
-     list =data['product'];
+     list =data;
      //
      // update();
 
    }
    @override
   void onInit() {
+    super.onInit();
     getData();
   }
    bool Like = true;
    int value = 3;
 
    void toggle() {
-     Like = !Like;
+
+     // Like = !Like;
      Like ? value++ : value--;
      update();
    }

@@ -7,14 +7,16 @@ import 'package:get/get.dart';
 class PlayingController extends GetxController {
   TextEditingController tc = TextEditingController();
   List<String> comment = ['Yohoo man !'];
-  late final List list;
+  List list = [];
   void getData() async {
     final data = await rootBundle.loadString("assets/data.json");
     var obj = jsonDecode(data);
-    list = obj["items"];
+    list = obj;
   }
 
+  @override
   void onInit() {
+    super.onInit();
     getData();
   }
 

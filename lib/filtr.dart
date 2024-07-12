@@ -17,6 +17,7 @@ class _filterState extends State<filter> {
   List<Map<String, dynamic>> found = [];
   @override
   void initState() {
+    super.initState();
     found = alluser;
     setState(() {
       found = result;
@@ -66,7 +67,7 @@ class _filterState extends State<filter> {
               } else if (pos.toLowerCase().contains(tc.text.toLowerCase())) {
                 return ListTile(
                   title: Text('Hellow flutter developer' + pos),
-                  subtitle: Text('23'),
+                  subtitle: const Text('23'),
                 );
               } else {
                 const CircularProgressIndicator();

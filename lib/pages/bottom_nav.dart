@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo/pages/reels_page.dart';
+import 'package:todo/pages/search_page.dart';
 
 import '../controller/landing_page.dart';
 import 'home_page.dart';
@@ -109,7 +110,7 @@ class LandingPage extends StatelessWidget {
               HomePage(),
               VideoPage(),
               Reels(),
-              Reels(),
+              SearchPage(),
               Reels(),
             ],
           )),

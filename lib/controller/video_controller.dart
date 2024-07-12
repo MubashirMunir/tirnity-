@@ -8,11 +8,13 @@ class VideoController extends GetxController {
   void getData() async {
     final data = await rootBundle.loadString("assets/data.json");
     var obj = jsonDecode(data);
-    list = obj["product"];
+    list = obj;
     update();
   }
 
+  @override
   void onInit() {
+    super.onInit();
     getData();
     update();
   }

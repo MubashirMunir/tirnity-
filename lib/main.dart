@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:todo/controller/add_new_post.dart';
 import 'package:todo/controller/post_controller.dart';
-import 'package:todo/pages/add_new_post.dart';
-import 'package:todo/pages/home_page.dart';
+import 'controller/add_new_post.dart';
 import 'controller/add_video_controller.dart';
 import 'controller/complain_controller.dart';
 import 'controller/create_playe_controller.dart';

@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
                           InkWell(onTap:(){ctrl.navigat(ctrl.list[index]['name'],ctrl.list[index]['image'],ctrl.list[index]['comment']);},
                             child: Row(children: [
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding:  EdgeInsets.all(8.0),
                                 child: CircleAvatar(
                                   radius: 20,
                                   backgroundImage: NetworkImage(
@@ -134,9 +134,11 @@ class HomePage extends StatelessWidget {
                                   )),
                               TextButton(
                                   onPressed: () {
-                                    ctrl.toggle();
+
+                                    ctrl.list[index]['isLike'] = !ctrl.list[index]['isLike'];
+                                   ctrl.update();
                                   },
-                                  child: ctrl.Like
+                                  child: ctrl.list[index]['isLike']
                                       ? const Text(
                                           'Like',
                                           style: TextStyle(
