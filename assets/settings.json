@@ -1,0 +1,47 @@
+{
+  "settings" :[
+   {
+     "icon": "https://cdn-icons-png.flaticon.com/128/2040/2040504.png",
+     "Label": "Account",
+    "subtitle": "see information about your acoount,download an archieve of your data or learn about deactivation of your account"
+
+},
+    {
+      "icon": "https://cdn-icons-png.flaticon.com/128/13304/13304600.png",
+      "Label": "Trinity Wallet",
+     "subtitle": "manage your funds"
+    },
+    {
+      "icon": "https://cdn-icons-png.flaticon.com/128/2645/2645897.png",
+      "Label": "Notifications",
+      "subtitle": "select the kind of notification you get about your activities, interests and recommendations "
+    },
+    {      "Label": "Favourites",
+      "icon": "https://cdn-icons-png.flaticon.com/128/1828/1828970.png",
+      "subtitle": "view the content you favoured"
+    },
+
+    {      "Label": "Business Tools",
+      "icon": "https://www.flaticon.com/free-icon/tool-box_7074781",
+      "subtitle": "Business Tools & information"
+    },
+    {         "Label": "Tips",
+      "icon": "https://cdn-icons-png.flaticon.com/128/5803/5803228.png",
+
+      "subtitle": "view & withdraw tips"
+
+    },
+    {
+      "Label": "Subscription Hub",
+      "icon": "https://cdn-icons-png.flaticon.com/128/511/511587.png",
+
+      "subtitle": "view your subscription information & status"
+    },
+    {
+      "Label": "Privacy",
+      "icon": "https://cdn-icons-png.flaticon.com/128/7358/7358460.png",
+      "subtitle": "manage what information you see"
+
+    }
+]
+}

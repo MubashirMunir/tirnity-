@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo/controller/post_controller.dart';
+import 'package:todo/controller/setting_page_controller.dart';
 import 'controller/add_new_post.dart';
 import 'controller/add_video_controller.dart';
 import 'controller/complain_controller.dart';
@@ -19,6 +20,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Get.testMode = true;
   Get.put(AddNewPostController());
+  Get.put(SettingsPageController());
   Get.put(AddVideoController());
   Get.put(PostController());
   Get.put(CreatePlayeController());

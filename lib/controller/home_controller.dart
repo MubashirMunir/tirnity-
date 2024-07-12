@@ -6,39 +6,28 @@ import '../pages/info_page.dart';
 class HomeController extends GetxController {
 
    bool isLike =true;
-
-   void togle(value){
+   List list =[];
+   int value = 3;
+   void togle(){
      isLike = !isLike;
      update();
    }
-
-    List list =[];
+   void incre() {
+     isLike ? value++ : value--;
+     update();
+   }
    getData() async{
      final jsonfile = await rootBundle.loadString("assets/data.json");
      final data =jsonDecode(jsonfile);
      list =data;
-     //
-     // update();
-
+     update();
    }
    @override
   void onInit() {
-    super.onInit();
-    getData();
+     getData();
   }
-   bool Like = true;
-   int value = 3;
 
-   void toggle() {
 
-     // Like = !Like;
-     Like ? value++ : value--;
-     update();
-   }
-
-   // void incre() {
-   //   Like ? value++ : value--;
-   // }
 Future<void> navigat(name,image,comment) async{
   await Get.to(InfoPage( name: name,image:image ,comment: comment,));
 }

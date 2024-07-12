@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo/pages/reels_page.dart';
 import 'package:todo/pages/search_page.dart';
+import 'package:todo/pages/settings_page.dart';
 
 import '../controller/landing_page.dart';
 import 'home_page.dart';
@@ -74,7 +75,7 @@ class LandingPage extends StatelessWidget {
                   icon: Container(
                     margin: const EdgeInsets.only(bottom: 7),
                     child: const Icon(
-                      Icons.person_off_outlined,
+                      Icons.search,
                       size: 14.0,
                     ),
                   ),
@@ -85,7 +86,7 @@ class LandingPage extends StatelessWidget {
                   icon: Container(
                     margin: const EdgeInsets.only(bottom: 7),
                     child: const Icon(
-                      Icons.search,
+                      Icons.person_off_outlined,
                       size: 14.0,
                     ),
                   ),
@@ -111,7 +112,7 @@ class LandingPage extends StatelessWidget {
               VideoPage(),
               Reels(),
               SearchPage(),
-              Reels(),
+              SettingsPage(),
             ],
           )),
     ));

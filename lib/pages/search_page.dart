@@ -1,17 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:todo/filtr.dart';
-
 import '../controller/search_controller.dart';
-import 'create_play.dart';
 
-class SearchPage extends StatefulWidget {
-  @override
-  State<SearchPage> createState() => _SearchPageState();
-}
-
-class _SearchPageState extends State<SearchPage> {
-  TextEditingController tc = TextEditingController();
+class SearchPage extends StatelessWidget {
+  const SearchPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,13 +22,13 @@ class _SearchPageState extends State<SearchPage> {
                     borderRadius: BorderRadius.circular(10)),
                 width: MediaQuery.of(context).size.width / 2,
                 child: TextField(
-                  controller: tc,
+                  controller: ctrl.tc,
                   onChanged: (val) {
-                    if (val.isEmpty) {
-                      ctrl.list;
-                      ctrl.searchList(tc.text);
-                      ctrl.update();
-                    }
+                    // if (val.isEmpty) {
+                    //   ctrl.filtered;
+                    ctrl.searchFromJson(val);
+                    ctrl.update();
+                    // }
                   },
                   decoration: const InputDecoration(
                     hintText: 'Search user',
@@ -55,42 +47,35 @@ class _SearchPageState extends State<SearchPage> {
             ]),
             Expanded(
                 child: ListView.builder(
-                    itemCount: ctrl.list.length,
+                    itemCount: ctrl.filtered.length,
                     itemBuilder: (context, index) {
-                      return ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage:
-                              NetworkImage(ctrl.list[index]['image']),
-                        ),
-                        title: Text(ctrl.list[index]['name']),
-                        subtitle: Text(ctrl.list[index]['name']),
-                        trailing: TextButton(
-                          onPressed:(){
-                            setState(() {
-                              ctrl.list[index]['isFollow'] = !ctrl.list[index]['isFollow'];
-                            });
-                          },
-                          child:ctrl.list[index]['isFollow'] ? Text('Follow'):const Text('Unfollow') ,)
-                      );
+                      if (ctrl.filtered.isEmpty) {
+                        const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      } else {
+                        return ListTile(
+                            leading: CircleAvatar(
+                              backgroundImage: NetworkImage(
+                                  ctrl.filtered[index]['thumbnail_url']),
+                            ),
+                            title: Text(ctrl.filtered[index]['title']),
+                            subtitle: Text(ctrl.filtered[index]['artist']),
+                            trailing: TextButton(
+                              onPressed: () {
+                                ctrl.list[index]['isFollow'] =
+                                    !ctrl.list[index]['isFollow'];
+                                ctrl.update();
+                              },
+                              child: ctrl.list[index]['isFollow']
+                                  ? const Text('Follow')
+                                  : const Text('Unfollow'),
+                            ));
+                      }
                     }))
           ],
         ),
       );
     });
   }
-
-  // List<String> data = ['Cars', 'Bikes', 'Trucks'];
-  // List<String> dumy = [];
-  // @override
-  // void initState() {
-  //   dumyList = data;
-  // }
-  // void FiterList(String value) {
-  //   setState(() {
-  //     dummyList = data
-  //         .where((e) =>
-  //             e.toLowerCase().contains(value.toLowerCase()))
-  //         .toList();
-  //   });
-  // }
 }

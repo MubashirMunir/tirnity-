@@ -134,7 +134,8 @@ class HomePage extends StatelessWidget {
                                   )),
                               TextButton(
                                   onPressed: () {
-
+                                    ctrl.togle();
+                                    ctrl.incre();
                                     ctrl.list[index]['isLike'] = !ctrl.list[index]['isLike'];
                                    ctrl.update();
                                   },

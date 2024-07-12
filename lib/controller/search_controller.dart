@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -14,34 +13,41 @@ class SearchPageController extends GetxController {
     'Bus',
     'Trains'
   ];
-  bool IsFollow =true;
-  String val ="Follow";
-  String val1 ="Follow";
+
 
   List filtered = [];
   @override
-  void onInit() {
-    super.onInit();
-    getData();
-    filtered = list;
-    update();
-  }
-  void searchList(String word) {
-      filtered = data
-          .where((e) =>
-          e.toLowerCase().contains(word.toLowerCase()))
-          .toList();
-      update();
-    }
-    List list =[];
+ // search filter for hardcoded data
+  // void searchList(String word) {
+  //     filtered = data
+  //         .where((e) =>
+  //         e.toLowerCase().contains(word.toLowerCase()))
+  //         .toList();
+  //     update();
+  //   }
+
      getData()async{
-    final jsonlist= await rootBundle.loadString("assets/data.json");
+    final jsonlist= await rootBundle.loadString("assets/song.json");
     final decoded =jsonDecode(jsonlist);
     list =decoded;
-    update();
+    filtered=list;
     }
-    void follow(){
-       IsFollow = !IsFollow;
+ //first initialize widget getData called
+  void onInit() {
+    getData();
+  }
+
+  List list =[];
+    void searchFromJson(String val){
+       if(val.isEmpty){
+         filtered = list;
+         update();
+       }else if(val.isNotEmpty){
+         filtered=list.where((element)=> element['title'].toString().toLowerCase().contains(val.toString().toLowerCase())).toList();
+
+    }
+       else{       filtered=list.where((element)=> element['artist'].toString().toLowerCase().contains(val.toString().toLowerCase())).toList();
+       }
        update();
     }
   }
